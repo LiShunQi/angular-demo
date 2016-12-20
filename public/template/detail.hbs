@@ -1,0 +1,56 @@
+<div class="" ng-controller="detailController as detailCtrl">
+    <h1>User detail Page</h1>
+    <div>
+        <button class="btn btn-default" ng-click="detailCtrl.currentTab = 'tab1'">肖像</button>
+        <button class="btn btn-default" ng-click="detailCtrl.currentTab = 'tab2'">简历</button>
+        <button class="btn btn-default" ng-click="detailCtrl.currentTab = 'tab3'">经历</button>
+        <button class="btn btn-default" ng-click="detailCtrl.currentTab = 'default'">个人主页</button>
+    </div>
+
+    <div ng-switch="detailCtrl.currentTab">
+        <div ng-switch-when="tab1">
+            <h3>肖像 Tab1 is selected</h3>
+            <img ng-src="{{detailCtrl.myVar}}" width="200" height="200">
+        </div>
+        <div ng-switch-when="tab2">
+            <h3>简历 Tab1 is selected</h3>
+            Number of People:<input type="text" ng-model="detailCtrl.personCount" value="1" /><br/>
+            <p ng-pluralize
+               count = 'detailCtrl.personCount'
+               when = "{'0': 'Nobody is viewing.',
+                      'one': '1 person is viewing',
+                      'other': '{} person is viewing'
+               }"
+            ></p>
+        </div>
+        <div ng-switch-when="tab3">
+            <h3>经历 Tab1 is selected</h3>
+            <h4>Event Directive</h4>
+            <input type = 'text'
+                    ng-blur = "detailCtrl.focusState = 'Blurred'"
+                   ng-focus = "detailCtrl.focusState = 'Focused'"
+                   ng-mouseenter = "detailCtrl.mouseState = 'Entered'"
+                   ng-mouseleave = "detailCtrl.mouseState = 'Left'"
+                   ng-mouseclick = "detailCtrl.mouseState = 'Clicked'"
+                   ng-mousedown = "detailCtrl.mouseState = 'Down'"
+                   ng-mouseup = "detailCtrl.mouseState = 'Up'"
+                   ng-keyup = "detailCtrl.keyStroke($event)"
+                   ng-click = "detailCtrl.mouseClick($event)"
+            > <hr>
+            Focus State: {{detailCtrl.focusState}}<br/>
+            Mouse State: {{detailCtrl.mouseState}}<br/>
+            Key Info: {{detailCtrl.keyInfo | json}}<br/>
+            Mouse info: {{detailCtrl.mouseInfo | json}}<br/>
+        </div>
+        <div ng-switch-default>
+            <h3>个人主页 Tab1 is selected</h3>
+            个人主页
+        </div>
+    </div>
+
+    <div ng-controller="detailController as pctrl">
+        <div ng-include="detailCtrl.template"></div>
+    </div>
+
+    <p>{{ ctrl.message}}</p>
+</div>

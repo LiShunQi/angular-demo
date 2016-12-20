@@ -1,0 +1,31 @@
+{
+  "name": "bootsobj",
+  "description": "bootstrap",
+  "main": "index.js",
+  "authors": [
+    "lsq"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bootstrap"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendors",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  },
+  "dependencies": {
+    "ng-table": "^3.0.1",
+    "angular-animate": "^1.6.0"
+  }
+}

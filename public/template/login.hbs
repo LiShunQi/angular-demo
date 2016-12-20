@@ -1,0 +1,37 @@
+<div class="" ng-controller="loginController as loginCtrl">
+    <h1>User login Page</h1>
+    <!--<div ng-bind="loginCtrl.message"></div>-->
+    <div style="width:500px;margin: 0 auto;" class="">
+        <form role="form"
+              name="loginForm"
+              ng-submit="loginCtrl.login()"
+              class="form-horizontal"  >
+            <div class="form-group">
+                <label class="col-sm-2">用户名：</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control"
+                           ng-model="loginCtrl.user.username"
+                           required
+                           placeholder="请输入用户名..."
+                           name="username">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">密码：</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control"
+                           ng-model="loginCtrl.user.password"
+                           required
+                           placeholder="请输入密码..."
+                           name="pwd">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default"
+                    ng-disabled="loginForm.$invalid"
+            >Login</button>
+        </form>
+    </div>
+
+    <div ng-bind="loginCtrl.messageFull"></div>
+    <p>{{ loginCtrl.message}}</p>
+</div>

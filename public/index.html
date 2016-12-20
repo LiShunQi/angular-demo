@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--SEO第一步：SEO优化处理-->
+    <!--第二步：在链接标签中加入#号和！号-->
+    <!--第三步：在js中locationprovider模块中的hashprefix = '!';-->
+    <!--第四步：在主入口程序中 两个模块  将文件引入  把文件上涉及到的路由放到一个数组  中间件-->
+    <base href="/">
+    <meta name="fragment" content="!">
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap-theme.css">-->
+    <!--<link rel="stylesheet" href="stylesheets/sigleApp.css">-->
+    <link rel = "stylesheet" href="vendors/ng-table/ng-table.min.css">
+
+
+</head>
+<body>
+<header >
+    <nav>
+        <ul class="list-inline text-center">
+            <li><a href="/#!/user/signup">注册</a></li>
+            <li ><a href="/#!">登陆</a></li>
+            <li><a href="/#!/user/detail">个人信息</a></li>
+            <li><a href="/#!/user/edit">编辑</a></li>
+            <!--<li><a href="/list">列表</a></li>-->
+            <li><a href="/#!/user/userlist">用户列表</a></li>
+            <li><a href="/#!/user/forgotpwd">忘记密码</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="row container-fluid">
+    <div class="col-md-2">
+        <ul class="list-unstyled list-group">
+            <li class="list-group-item disabled">菜单列表</span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-search"><a href="">菜单一</a></span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-search"><a href="">菜单一</a></span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-search"><a href="">菜单一</a></span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-search"><a href="">菜单一</a></span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-search"><a href="">菜单一</a></span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-search"><a href="">菜单一</a></span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-search"><a href="">菜单一</a></span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-search"><a href="">菜单一</a></span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-search"><a href="">菜单一</a></span></li>
+        </ul>
+    </div>
+    <section   class=" col-md-10">
+        <div class="page {{pageClass}}" ng-view></div>
+    </section>
+</div>
+
+
+
+
+<script src="vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/angular/angular.min.js"></script>
+<script src="vendors/angular-route/angular-route.min.js"></script>
+<script src = 'vendors/ng-table/ng-table.min.js'></script>
+<script src="vendors/angular-animate/angular-animate.min.js"></script>
+<script src="javascripts/sigleApp.js"></script>
+</body>
+</html>

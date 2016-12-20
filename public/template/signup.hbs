@@ -1,0 +1,68 @@
+<div class="container-fluid" ng-controller="signupController as signupCtrl">
+    <h1>User Signup Page</h1>
+    <p>{{ signupCtrl.message}}</p>
+
+    <div style="width: 630px;margin: 0 auto;">
+        <form role="form"
+              name="sigupForm"
+              class="form-horizontal"
+              ng-submit="signupCtrl.sigup()">
+            <div class="form-group " >
+                <label class="col-sm-2 text-right" >User Name:</label>
+                <div class="col-sm-10">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="signupCtrl.user.username"
+                           placeholder="请输入用户名" required>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label class="col-sm-2 text-right">Email:</label>
+                <div class="col-sm-10">
+                    <input type="email"
+                           class="form-control {{signupCtrl.stateClass}}"
+                           ng-model="signupCtrl.user.email"
+                           ng-blur="signupCtrl.check()"
+                           placeholder="请输入邮箱"><span>{{signupCtrl.Msg}}</span>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label class="col-sm-2 text-right">Age:</label>
+                <div class="col-sm-10">
+                    <input type="number"
+                           class="form-control"
+                           ng-model="signupCtrl.user.age"
+                           placeholder="请输入。。。">
+                </div>
+            </div>
+            <div class="form-group ">
+                <label class="col-sm-2 text-right">Password:</label>
+                <div class="col-sm-10">
+                    <input type="password"
+                           class="form-control"
+                           ng-model="signupCtrl.user.pwd"
+                           placeholder="请输入密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 text-right">验证码:</label>
+                <div class="col-sm-3">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="signupCtrl.user.captcha"
+                           placeholder="请输入验证码">
+                </div>
+                <div class="col-sm-4">
+                    <img  ng-src="{{signupCtrl.captcahSrc}}">
+                    <span ng-click="signupCtrl.refresh()" style="color:orangered;cursor:pointer">换一换</span>
+                    <span>{{signupCtrl.captchaErrorMsg}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-5 col-sm-3">
+                    <button type="submit" class="btn btn-default" ng-disabled="sigupForm.$invalid">Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
